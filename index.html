@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Rebalancer</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body id="space">
+	<form>
+		<table class="striped">
+			<thead>
+				<tr>
+					<th>Include</th>
+					<th>Symbol</th>
+					<th>Quantity</th>
+					<th>Price</th>
+					<th>Value</th>
+					<th>Allocation</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- ko foreach: securities -->
+				<tr>
+					<td>
+						<label>
+							<input type="checkbox" data-bind="checked: include">
+							<span></span>
+						</label>
+					</td>
+					<td data-bind="text: symbol"></td>
+					<td data-bind="text: quantity"></td>
+					<td data-bind="text: price"></td>
+					<td data-bind="text: value()"></td>
+					<td data-bind="percentage: allocation()"></td>
+					<td data-bind="text: include"></td>
+				</tr>
+				<!-- /ko -->
+
+			</tbody>
+		</table>
+		</form>
+
+		<!-- scripts -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+		<script src="./script.js"></script>
+	</body>
+</html>
