@@ -10,29 +10,23 @@
 		<table class="striped">
 			<thead>
 				<tr>
-					<th>Include</th>
 					<th>Symbol</th>
 					<th>Quantity</th>
 					<th>Price</th>
 					<th>Value</th>
 					<th>Allocation</th>
+					<th>To Buy</th>
 				</tr>
 			</thead>
 			<tbody>
 				<!-- ko foreach: securities -->
 				<tr>
-					<td>
-						<label>
-							<input type="checkbox" data-bind="checked: include">
-							<span></span>
-						</label>
-					</td>
 					<td data-bind="text: symbol"></td>
 					<td data-bind="text: quantity"></td>
 					<td data-bind="text: price"></td>
 					<td data-bind="text: value()"></td>
 					<td data-bind="percentage: allocation()"></td>
-					<td data-bind="text: include"></td>
+					<td data-bind="text: purchase_amt($parent.base())"></td>
 				</tr>
 				<!-- /ko -->
 

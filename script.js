@@ -36,14 +36,19 @@ function Security(line) {
 	};
 
 	this.allocation = function() {
-		if (self.symbol == "VTI") { return 0.7; }
-		if (self.symbol == "VXUS") { return 0.3; }
-		if (self.symbol == "BND") { return 0.0; }
-		if (self.symbol == "BNDX") { return 0.0; }
+		if (self.symbol == "VTI") { return 0.65; }
+		if (self.symbol == "VXUS") { return 0.25; }
+		if (self.symbol == "BND") { return 0.07; }
+		if (self.symbol == "BNDX") { return 0.03; }
 		return 0;
 	}
 
-	this.include = ko.observable(false);
+	this.purchase_amt = function(base) {
+		if (self.allocation() == 0) { return 0; }
+		var value = base*self.allocation()*100 - self.value();
+		var count = value/self.price;
+		return Math.floor(count);
+	};
 
 	//initialise
 	var cols = line.split(',');
