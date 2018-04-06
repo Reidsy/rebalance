@@ -38,8 +38,8 @@ function Security(line) {
 	this.allocation = function() {
 		if (self.symbol == "VTI") { return 0.65; }
 		if (self.symbol == "VXUS") { return 0.25; }
-		if (self.symbol == "BND") { return 0.07; }
-		if (self.symbol == "BNDX") { return 0.03; }
+		// if (self.symbol == "BND") { return 0.07; }
+		// if (self.symbol == "BNDX") { return 0.03; }
 		return 0;
 	}
 
